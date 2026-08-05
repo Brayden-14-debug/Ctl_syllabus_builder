@@ -176,7 +176,7 @@ const FALL_2026 = [
 /* ---------- initial state ---------- */
 
 const blank = {
-  code: "", title: "", term: "Fall 2026", modality: "In person",
+  code: "", title: "", crn: "", section: "", term: "Fall 2026", modality: "In person",
   credits: "3", meeting: "", location: "", dept: "", prereq: "",
   instructor: "", email: "", office: "", hours: "", address: "",
   subjectLine: "", responseTime: "48 hours on business days",
@@ -293,7 +293,7 @@ export default function SyllabusBuilder() {
 
     // Course facts
     const facts = [
-       ["Course", `${d.code} ${d.title}`.trim()],
+      ["Course", `${d.code} ${d.title}`.trim()],
       ["CRN", d.crn],
       ["Section", d.section],
       ["Term", d.term],
@@ -502,6 +502,10 @@ export default function SyllabusBuilder() {
             <div className="flex gap-3 flex-wrap">
               <div style={{ flex: "1 1 150px" }}><Field label="Course code" hint="POSC 322"><T value={d.code} onChange={(v) => set("code", v)} placeholder="POSC 322" /></Field></div>
               <div style={{ flex: "2 1 240px" }}><Field label="Course title"><T value={d.title} onChange={(v) => set("title", v)} placeholder="American Foreign Policy" /></Field></div>
+            </div>
+            <div className="flex gap-3 flex-wrap">
+              <div style={{ flex: "1 1 130px" }}><Field label="CRN" hint="the 5-digit registration number"><T value={d.crn} onChange={(v) => set("crn", v)} placeholder="12345" /></Field></div>
+              <div style={{ flex: "1 1 130px" }}><Field label="Section"><T value={d.section} onChange={(v) => set("section", v)} placeholder="001" /></Field></div>
             </div>
             <div className="flex gap-3 flex-wrap">
               <div style={{ flex: "1 1 130px" }}><Field label="Term"><T value={d.term} onChange={(v) => set("term", v)} /></Field></div>
