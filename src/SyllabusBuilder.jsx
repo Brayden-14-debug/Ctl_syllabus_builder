@@ -293,7 +293,9 @@ export default function SyllabusBuilder() {
 
     // Course facts
     const facts = [
-      ["Course", `${d.code} ${d.title}`.trim()],
+       ["Course", `${d.code} ${d.title}`.trim()],
+      ["CRN", d.crn],
+      ["Section", d.section],
       ["Term", d.term],
       ["Delivery", d.modality],
       ["Credit hours", d.credits],
